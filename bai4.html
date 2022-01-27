@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Animal {
+        constructor(name, weight) {
+            this.name = name;
+            this.weight = weight;
+        }
+        setName(newName) {
+            this.name = newName;
+        }
+        setWeight(newWeight) {
+            this.weight = newWeight;
+        }
+        getName() {
+            return this.name;
+        }
+        getWeight() {
+            return this.weight;
+        }
+        toString() {
+            return `Ten cua con nay la ${this.getName()} can nang cua no la ${this.getWeight()}`;
+        }
+    }
+</script>
+<br>
+<script>
+    const objAnimal1 = new Animal('Elephant', 45.6);
+
+    //Gọi phương thức toString()
+    console.log(objAnimal1.toString());
+
+    //Tạo đối tượng 2
+    const objAnimal2 = new Animal('Cat', 23);
+
+    //Đổi tên cho đối tượng 2 thành 'Mouse'
+    objAnimal2.setName('Mouse');
+    console.log(objAnimal2)
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="inputText" type="text" style="width: 300px" placeholder="Nhập 1 chuỗi ký tự">
+<input type="button" value="Kiểm Tra" onclick="checkString()">
+<script>
+    function checkAndCountChars(string = null) {
+        let count = 0;
+        let arrString = [];
+        let arrCheck = ['a', 'o', 'e', 'u', 'i', 'A', 'O', 'E', 'U', 'I'];
+        if(string != null){
+
+            arrString = Array.from(string);
+            for (let i = 0; i < arrString.length; i++) {
+                if(arrCheck.includes(arrString[i])){
+                    count++;
+                }
+            }
+            if(count > 0){
+                alert(`Trong chuỗi ${string} có ${count} ký tự nguyên âm xuất hiện.`);
+            }else{
+                alert(`Không có ký tự nguyên âm nào xuất hiện trong chuỗi ${string}`);
+            }
+
+        }else{
+            alert(`Chuỗi ký tữ nhập vào không được rỗng`);
+        }
+    }
+
+    function checkString() {
+        let inputValue = document.getElementById('inputText').value ?? null;
+        checkAndCountChars(inputValue);
+    }
+</script>
+
+</body>
+</html>

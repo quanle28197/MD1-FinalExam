@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>[6, 7, 8, 9, 10, 20]</pre>
+<br>
+<input id="inputNumber" type="number" style="width: 300px" value="0" placeholder="Nhập 1 số nguyên , mặc định là 0">
+<input type="button" value="Kiểm Tra" onclick="checkNumber()">
+<script>
+    function checkInArray(number, array = []) {
+        let index = null;
+        if(array.length != 0){
+
+            for (let i = 0; i < array.length; i++) {
+                if(array[i] == number){
+                    index = i;
+                    alert(`Vị trí(index) của số ${number} là ${i} nằm trong mảng [${array.join(`, `)}]`);
+                    break;
+                }
+            }
+            if(index == null){
+                alert(`Số ${number} không nằm trong mảng [${array.join(`, `)}]`);
+            }
+
+        }else{
+            alert(`Mảng nhập vào bị rỗng`);
+        }
+    }
+
+    let arrCheck = [6, 7, 8, 9, 10, 20];
+    function checkNumber() {
+        let inputValue = document.getElementById('inputNumber').value ?? 0;
+        checkInArray(inputValue, arrCheck);
+    }
+</script>
+</body>
+</html>
